@@ -10,7 +10,7 @@ const FifthComponent = () => {
         <h1 className="text-[2.25rem] leading-none font-semibold mb-6 text-[#FE8162]">Answer?</h1>
         <p className="text-[#767575] text-center">Check out our most commonly asked questions below to find the information you need.</p>
         <div className="mt-2">
-            {items.map((item) => <AnswerItem text={item}/>)}
+            {items.map((item, ind) => <AnswerItem key={ind} text={item}/>)}
         </div>
         
     </div>

@@ -35,19 +35,20 @@ const FourSubcomponent = () => {
             </div>
             <h1 className="text-[2.25rem] leading-none mt-2 font-semibold mb-6 text-white">Explore an array of features that elevate your <span className="text-[#FE8162]">Productivity</span> to new heights</h1>
             <p className="text-[#767575]">Discover the tools that will revolutionize the way you manage and optimize your operations</p>
-            {features.map((item) => <Feature 
+            {features.map((item, ind) => <Feature 
+                key={ind}
                 icon={item.icon} 
                 title={item.title} 
                 desc={item.desc}
             />)}
             <div className="flex justify-between px-5">
               {icons.map((item, ind) => {
-                if(ind<=4) return <SiteIcon icon={item}/>
+                if(ind<=4) return <SiteIcon key={ind} icon={item}/>
               })}
             </div>
             <div className="flex justify-between px-5 mt-2 mb-12">
               {icons.map((item, ind) => {
-                if(ind>4) return <SiteIcon icon={item}/>
+                if(ind>4) return <SiteIcon key={ind} icon={item}/>
               })}
             </div>
             <div className="w-full flex justify-center items-center">
