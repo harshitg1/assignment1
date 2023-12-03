@@ -29,19 +29,22 @@ const FourSubcomponent = () => {
   ]
   return (
     <>
-        <div className="bg-black pt-8 px-4">
+        <div className="bg-black pt-8 px-4 flex flex-col items-center">
             <div className="my-4">
                 <Tag text="and more"/>
             </div>
             <h1 className="text-[2.25rem] leading-none mt-2 font-semibold mb-6 text-white">Explore an array of features that elevate your <span className="text-[#FE8162]">Productivity</span> to new heights</h1>
             <p className="text-[#767575]">Discover the tools that will revolutionize the way you manage and optimize your operations</p>
-            {features.map((item, ind) => <Feature 
+            <div className="flex w-full md:flex-row flex-col justify-around">
+              
+              {features.map((item, ind) => <Feature 
                 key={ind}
                 icon={item.icon} 
                 title={item.title} 
                 desc={item.desc}
-            />)}
-            <div className="flex justify-between px-5">
+                />)}
+                </div>
+            <div className="flex justify-between px-5 max-w-md">
               {icons.map((item, ind) => {
                 if(ind<=4) return <SiteIcon key={ind} icon={item}/>
               })}
